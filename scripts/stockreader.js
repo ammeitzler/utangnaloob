@@ -50,6 +50,16 @@ $(document).ready(function(){
     let selected = shuffled.slice(0, n);
     if(selected) {
       // console.log(selected)
+      //removes items from array
+      let children = document.querySelectorAll(".box");
+      children = Array.prototype.slice.call(children, 0);
+      if (children.length == 15) {
+        children.forEach(function(item,i) {
+          if (i < 8) {
+            item.remove();
+          }
+        })
+      }
       //author
       let newSpan_author = document.createElement("span");
       newSpan_author.classList.add("author");
