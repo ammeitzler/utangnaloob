@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   const wrapper = document.getElementById("wrapper");
-  const colors = ["color1", "color2", "color3", "color4"]
+  const colors = ["color1", "color2", "color3", "color4", "color5"]
   let n = 8;
   let json_data = [];
 
@@ -17,6 +17,7 @@ $(document).ready(function(){
         let newSpan_comment = document.createElement("span");
         newSpan_comment.classList.add("comment");
         newSpan_comment.innerHTML = item.text;
+        newSpan_comment.setAttribute("data-text", item.text);
 
         let newDiv = document.createElement("div");
         newDiv.classList.add("box")

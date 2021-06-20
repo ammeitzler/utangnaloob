@@ -3,25 +3,211 @@ body {
 	background-color: #000;
 	color: #fff;
 	font-family: Monospace;
-	font-size: 13px;
+	font-size: 1rem;
 	line-height: 24px;
 	overscroll-behavior: none;
+}
+#container {
+	position: relative;
 }
 
 /************
 gui 
 *************/
+#gooey {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+/* archive */
+#screenshots {
+	position: absolute;
+	right: 2rem;
+	bottom: 2rem;
+	background: rgb(4 8 9 / 25%);
+	border-radius: 0.5em;
+	padding: 0.65rem;
+	max-width: 51%;
+	min-width: 51%;
+	box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#screenshots img {
+	width: 5rem;
+	border-radius: 0.5em;
+	margin-right: 1rem;
+}
+#screenshots img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffee10;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+#screenshots img:before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+
+#screenshots img {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+
+#screenshots img:last-child {
+	margin-right: 0;
+}
+.shot_container {
+	position: relative;
+	margin-bottom: -0.5rem;
+	text-align: right;
+}
+
+
+
+/* info */
+#info svg {
+  position: relative; 
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 63px;
+  border-radius: 50%;
+  font-size: 30px;
+  transition: .5s;
+}
+#info svg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffee10;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+#info svg:before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+
+#info svg {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+	font-size: 1rem;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+	background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  width: 40%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #ffee10;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+	padding: 1rem 2rem;
+	text-align: left;
+}
+
+
+
+/* blinking exchange */
+#exchange {
+  margin: 0 auto;
+  font-family: sans-serif;
+	position: absolute;
+	right: 2rem;
+	bottom: 10rem;
+}
+.exchange-text {
+  color: yellow;
+	font-size: 5rem;
+}
+.blink-soft {
+  animation: blinker 3.5s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* map */
+#map {
+	position: absolute;
+	left: 2rem;
+	top: 2rem;
+	border-radius: 0.5em;
+	width: 22%;
+}
+#map img {
+	width: 100%;
+}
+
+
+
+/* chatbox */
 #chat{
 	position: absolute;
 	left: 2rem;
 	bottom: 2rem;
+	background: rgb(4 8 9 / 25%);
+	border-radius: 0.5em;
+	width: 33%;
 }
 #wrapper {
-	background: rgb(4 8 9 / 25%);
-	width: 30%;
-	height: 35rem;
 	overflow: scroll;
-	border-radius: 0.5em;
+	height: 35rem;
+	-webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  width: 100%;
+  overflow-y: scroll;
 }
 #wrapper > div {
 	display:block;
@@ -35,7 +221,7 @@ gui
 	color: #d0e586;;
 }
 .color2 {
-	color: blue;
+	color: #005aff;
 }
 .color3 {
 	color: orange;
@@ -43,20 +229,11 @@ gui
 .color4 {
 	color: aqua;
 }
+.color5 {
+	color: #c7ff03;
+}
 
-#screenshots {
-	position: absolute;
-	right: 2rem;
-	bottom: 2rem;
-	width: 100%;
-}
-#shot_container {
-	background: rgb(4 8 9 / 25%);
-	height: 10rem;
-	width: 65%;
-	margin-left: auto;
-	border-radius: 0.5em;
-}
+
 
 
 
@@ -102,7 +279,6 @@ a, button, input, select {
 
 #overlay {
 	position: absolute;
-	font-size: 16px;
 	z-index: 2;
 	top: 0;
 	left: 0;
@@ -126,10 +302,4 @@ a, button, input, select {
 		cursor: pointer;
 	}
 
-#notSupported {
-	width: 50%;
-	margin: auto;
-	background-color: #f00;
-	margin-top: 20px;
-	padding: 10px;
-}
+
