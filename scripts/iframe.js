@@ -11,13 +11,15 @@ function onYouTubeIframeAPIReady() {
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
-    }
+    },
   });
 }
 
 function onPlayerReady(event) {
   console.log("hey Im ready");
   event.target.playVideo();
+  event.target.setVolume(1);
+  event.target.stopVideo();
   //do whatever you want here. Like, player.playVideo();
 }
 
@@ -26,15 +28,13 @@ function onPlayerStateChange() {
 }
 
 unmute_elm.addEventListener('click', function(event) {
-  console.log("click")
+  player.mute();
   if (player.isMuted()) {
     player.unMute();
   }
 });
 
-
-
 setTimeout(function(){
-  unmute_elm .click();
+  unmute_elm.click();
 }, 5000);
 

@@ -3,6 +3,7 @@ import Stats from '../jsm/libs/stats.module.js';
 import { GUI } from '../jsm/libs/dat.gui.module.js';
 import { OrbitControls } from '../jsm/controls/OrbitControls.js';
 import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
+import { Sky } from '../jsm/objects/Sky.js';
 
 function updateFigure() {
   console.log("FROM EXCHANGE", rate, " ", rate_tenth)
@@ -17,7 +18,7 @@ function updateFigure() {
   modifyTimeScale( cleaned_rate_tenth )
 
   // SET FOR INSTALL (SET TO RATE THAT CHECKS EXCHANGE RATE API) //
-  setTimeout(updateFigure, 10000);
+  setTimeout(updateFigure, 100000);
 }
 
 setTimeout(function(){
@@ -25,7 +26,7 @@ setTimeout(function(){
 }, 2000); 
 
 let scene, renderer, camera, stats, controls;
-let model, skeleton, mixer, clock;
+let model, skeleton, mixer, clock, sky;
 
 const crossFadeControls = [];
 
@@ -71,6 +72,11 @@ function init() {
   dirLight.shadow.camera.near = 0.1;
   dirLight.shadow.camera.far = 40;
   scene.add( dirLight );
+
+  // Add Sky
+  sky = new Sky();
+  sky.scale.setScalar( 10000 );
+  scene.add( sky );
 
   // ground
 
@@ -309,7 +315,7 @@ function animate() {
   const mixerUpdateDelta = clock.getDelta();
 
   //rotate camera
-  const time = - performance.now() * 0.0000000000000000001;
+  const time = - performance.now() * 0.00000000000000001;
   camera.position.x = 5 * Math.cos( time );
   camera.position.z = 11 * Math.sin( time );
   camera.position.y = 1.5;
