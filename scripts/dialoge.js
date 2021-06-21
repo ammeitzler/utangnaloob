@@ -50,7 +50,6 @@ $(document).ready(function(){
     const shuffled = json_data.sort(() => 0.5 - Math.random());
     let selected = shuffled.slice(0, n);
     if(selected) {
-      // console.log(selected)
       //removes items from array
       let children = document.querySelectorAll(".box");
       children = Array.prototype.slice.call(children, 0);
@@ -83,9 +82,9 @@ $(document).ready(function(){
   function updateBoard() {
     n = 1;
     getIndividualText(n);
-    setTimeout(updateBoard, 4000);
-    // setTimeout(updateBoard, 4000);
-    //updateScroll
+    
+    // SET FOR INSTALL (SET TO RATE) //
+    setTimeout(updateBoard, 4600);
     wrapper.scrollTop = wrapper.scrollHeight;
   }
 

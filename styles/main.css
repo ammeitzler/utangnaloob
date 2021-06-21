@@ -32,7 +32,7 @@ gui
 	border-radius: 0.5em;
 	max-width: 50%;
 	min-width: 50%;
-	height: 20rem;
+	height: 22rem;
 	box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -218,7 +218,7 @@ gui
 	right: 2rem;
 	top: 2rem;
 	border-radius: 0.5em;
-	width: 22%;
+	width: 18%;
 }
 #map img {
 	width: 100%;
@@ -237,7 +237,7 @@ gui
 }
 #wrapper {
 	overflow: scroll;
-	height: 35rem;
+	height: 22rem;
 	-webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   width: 100%;
@@ -281,7 +281,7 @@ threejs
 	-ms-user-select: none;
 	user-select: none;
 	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+	z-index: 1;
 }
 
 a, button, input, select {
@@ -293,7 +293,8 @@ a, button, input, select {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	z-index: 2 !important; /* TODO Solve this in HTML */
+	z-index: 2 !important; 
+	display: none;
 }
 .dg.a {
 	float: left !important;

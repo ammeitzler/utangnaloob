@@ -4,14 +4,20 @@ import { GUI } from '../jsm/libs/dat.gui.module.js';
 import { OrbitControls } from '../jsm/controls/OrbitControls.js';
 import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
 
-console.log("FROM EXCHANGE", rate, " ", rate_tenth)
-
 function updateFigure() {
+  console.log("FROM EXCHANGE", rate, " ", rate_tenth)
   let cleaned_rate  = parseFloat(((rate * 10.0).toFixed(2))) * 2
-  console.log("all actions", allActions)
+  let cleaned_rate_tenth  = parseFloat(rate_tenth)
   let sneak_pose = allActions[5];
-  setWeight(sneak_pose, cleaned_rate)
-  // setTimeout(updateFigure, 10000);
+  let sad_pose = allActions[4];
+
+  //modify rates
+  setWeight(sad_pose, cleaned_rate)
+  setWeight(sneak_pose, cleaned_rate_tenth)
+  modifyTimeScale( cleaned_rate_tenth )
+
+  // SET FOR INSTALL (SET TO RATE THAT CHECKS EXCHANGE RATE API) //
+  setTimeout(updateFigure, 10000);
 }
 
 setTimeout(function(){
