@@ -1,9 +1,9 @@
 //archive
 const archive = document.querySelector("#screenshots .shot_container");
 const row1 = document.querySelector("#screenshots .shot_container .row1");
-const folder = "assets/grabs/";
+const folder = "assets/grabs";
 
-console.log(folder, "123")
+console.log(folder, "1233")
 
 $.ajax({
   url : folder,
@@ -15,7 +15,7 @@ $.ajax({
         // } else {
         //   $(archive).append(( "<img src='"+ folder + val +"'>" ));
         // }
-        $(archive).append(( "<img src='"+ folder + val +"'>" ));
+        $(archive).append(( "<img src='"+ folder + "/" + val +"'>" ));
       } 
     });
   }
