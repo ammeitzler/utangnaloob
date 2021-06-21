@@ -1,7 +1,7 @@
 //archive
 const archive = document.querySelector("#screenshots .shot_container");
 const row1 = document.querySelector("#screenshots .shot_container .row1");
-const folder = "assets/grabs";
+const folder = "https://utangngloob.netlify.app/assets/grabs/";
 
 console.log(folder, "1233")
 
@@ -15,7 +15,7 @@ $.ajax({
         // } else {
         //   $(archive).append(( "<img src='"+ folder + val +"'>" ));
         // }
-        $(archive).append(( "<img src='"+ folder + "/" + val +"'>" ));
+        $(archive).append(( "<img src='"+ folder + val +"'>" ));
       } 
     });
   }
