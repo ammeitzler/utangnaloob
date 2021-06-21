@@ -11,8 +11,8 @@ Summer 2021, Chicago, IL
 * `jsm/` threejs export functions
 * `models/` threejs pink figure
 
-## External APIS
-- Open Exchange Rate USD/PHP
+## External API's
+- Open Exchange Rate USD/PHP (https://openexchangerates.org/)
 ## Credits
-Created by: Angeline Marie Michael Meitzler
-Design Consultation by: Lucy Siyao Liu
+- Created by: Angeline Marie Michael Meitzler
+- Design Consultation by: Lucy Siyao Liu
