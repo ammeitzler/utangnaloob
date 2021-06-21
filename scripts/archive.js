@@ -1,9 +1,9 @@
 //archive
 const archive = document.querySelector("#screenshots .shot_container");
 const row1 = document.querySelector("#screenshots .shot_container .row1");
-const folder = "https://utangngloob.netlify.app/assets/grabs/";
+const folder = "https://utangngloob.netlify.app/assets/grabs";
 
-console.log(folder, "1233")
+console.log(folder, "12334")
 
 $.ajax({
   url : folder,
