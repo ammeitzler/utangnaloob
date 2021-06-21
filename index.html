@@ -5,7 +5,8 @@
 		<meta charset="utf-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
+		<link type="text/css" rel="stylesheet" href="styles/main.css">
+		<link type="text/css" rel="stylesheet" href="styles/colors.css">
 	</head>
 	<body>
 		<div id="container">
@@ -37,17 +38,26 @@
 
 				<div id="chat"><div id="wrapper"></div></div>
 				<div id="map"><img src="assets/worldmap.png"></div>
-				<div id="exchange">
-					<span>1.00 US Dollar =</span><br/>
-					<span class="exchange-text blink-soft">0.0</span>
-					<span>Philippine Pesos</span>
-				</div>
-
-				<div id="screenshots">
-					<div class="shot_container">
-						<div class="row1"></div>
+				<div id="right_panel">
+					<div id="exchange">
+						<span>USD/PHP</span>
+						<span>exchange rate</span>
+						<span class="yellow exchange-text blink-soft">0.0</span>
+						<span class="yellow blink-soft php">PHP</span>
+					</div>
+					<div id="video" class="gooey_padding">
+						<a id="play-video" href="#">Play Video</a><br />
+						<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0" frameborder="0" allowfullscreen></iframe>
+						<!-- <iframe id="existing-iframe-example"
+        width="640" height="360"
+        src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
+        frameborder="0"
+        style="border: solid 4px #37474F"
+></iframe> -->
 					</div>
 				</div>
+
+				<div id="screenshots" class="gooey_padding"><div class="shot_container"></div></div>
 
 			</div>
 		</div>
@@ -56,6 +66,7 @@
 		<script src="scripts/exchange.js"></script>
 		<script type="module" src="scripts/figure.js"></script>
 		<script src="scripts/stockreader.js"></script>
-		<script src="scripts/interactions.js"></script>
+		<script src="scripts/archive.js"></script>
+		<script src="scripts/iframe.js"></script>
 	</body>
 </html>

@@ -8,11 +8,12 @@ $.ajax({
   success: function (data, i) {
     $(data).find("a").attr("href", function (i, val) {
       if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-        if(i < 3) {
-          $(row1).append(( "<img src='"+ folder + val +"'>" ));
-        } else {
-          $(archive).append(( "<img src='"+ folder + val +"'>" ));
-        }
+        // if(i < 3) {
+        //   $(row1).append(( "<img src='"+ folder + val +"'>" ));
+        // } else {
+        //   $(archive).append(( "<img src='"+ folder + val +"'>" ));
+        // }
+        $(archive).append(( "<img src='"+ folder + val +"'>" ));
       } 
     });
   }

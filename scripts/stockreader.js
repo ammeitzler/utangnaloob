@@ -83,7 +83,7 @@ $(document).ready(function(){
   function updateBoard() {
     n = 1;
     getIndividualText(n);
-    setTimeout(updateBoard, 2000);
+    setTimeout(updateBoard, 4000);
     // setTimeout(updateBoard, 4000);
     //updateScroll
     wrapper.scrollTop = wrapper.scrollHeight;
