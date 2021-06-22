@@ -315,7 +315,7 @@ function animate() {
   const mixerUpdateDelta = clock.getDelta();
 
   //rotate camera
-  const time = - performance.now() * 0.00000000000000001;
+  const time = - performance.now() * 0.0000000001;
   camera.position.x = 5 * Math.cos( time );
   camera.position.z = 11 * Math.sin( time );
   camera.position.y = 1.5;
