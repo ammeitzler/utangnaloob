@@ -9,7 +9,7 @@ Summer 2021, Chicago, IL
   - allow for all sites or just for https://utangngloob.netlify.app/
 - Launch site in browser with sound enabled
 
-## Harward
+## Hardware
 - Mac MINI
 - xxx
 
