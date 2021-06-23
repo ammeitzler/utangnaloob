@@ -3,22 +3,36 @@ import Stats from '../jsm/libs/stats.module.js';
 import { GUI } from '../jsm/libs/dat.gui.module.js';
 import { OrbitControls } from '../jsm/controls/OrbitControls.js';
 import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
-import { Sky } from '../jsm/objects/Sky.js';
+// import { Sky } from '../jsm/objects/Sky.js';
 
 function updateFigure() {
   console.log("FROM EXCHANGE", rate, " ", rate_tenth)
-  let cleaned_rate  = parseFloat(((rate * 10.0).toFixed(2))) * 2
-  let cleaned_rate_tenth  = parseFloat(rate_tenth)
-  let sneak_pose = allActions[5];
-  let sad_pose = allActions[4];
+  const cleaned_rate  = parseFloat(((rate * 10.0).toFixed(2))) * 2
+  const cleaned_rate_tenth  = parseFloat(rate_tenth)
+  const sneak_pose = allActions[5];
+  const sad_pose = allActions[4];
 
-  //modify rates
+  //modify body based on rates
   setWeight(sad_pose, cleaned_rate)
   setWeight(sneak_pose, cleaned_rate_tenth)
   modifyTimeScale( cleaned_rate_tenth )
 
+  //modify sky based on time
+  const currentDate = new Date();
+  const current_hour = currentDate.getHours()
+  const min_exchange = 12;
+  const max_exchange = 2;
+  console.log(currentDate.getHours());
+  if(current_hour >= min_exchange && current_hour <= max_exchange) {
+    const loader2 = new THREE.TextureLoader();
+    const bgTexture = loader2.load('assets/sky.jpg');
+    scene.background = bgTexture;
+  } else {
+    scene.background = new THREE.Color( 0xf00f0f );
+  }
+
   // SET FOR INSTALL (SET TO RATE THAT CHECKS EXCHANGE RATE API) //
-  setTimeout(updateFigure, 100000);
+  setTimeout(updateFigure, 1800000);
 }
 
 setTimeout(function(){
@@ -26,7 +40,7 @@ setTimeout(function(){
 }, 2000); 
 
 let scene, renderer, camera, stats, controls;
-let model, skeleton, mixer, clock, sky;
+let model, skeleton, mixer, clock, sky, sun;
 
 const crossFadeControls = [];
 
@@ -56,7 +70,6 @@ function init() {
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color( 0xf00f0f );
-  // scene.fog = new THREE.Fog( 0xa0a0a0, 10, 100 );
 
   const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xf00f0f );
   hemiLight.position.set( 0, 20, 0 );
@@ -74,9 +87,24 @@ function init() {
   scene.add( dirLight );
 
   // Add Sky
-  sky = new Sky();
-  sky.scale.setScalar( 10000 );
-  scene.add( sky );
+  // sky = new Sky();
+  // sky.scale.setScalar( 50000 );
+  // scene.add(sky)
+  // sun = new THREE.Vector3();
+  // // Add Sky Effects
+  // const uniforms = sky.material.uniforms;
+  // console.log(uniforms)
+  // uniforms["turbidity"].value = 20
+  // uniforms["rayleigh"].value = 10
+  // uniforms["mieCoefficient"].value = .005
+  // uniforms["mieDirectionalG"].value = 2
+
+  // const phi = THREE.MathUtils.degToRad( 90 - 1 );
+  // const theta = THREE.MathUtils.degToRad( 180 );
+
+  // sun.setFromSphericalCoords( 1, phi, theta );
+  // uniforms[ 'sunPosition' ].value.copy( sun );
+
 
   // ground
 
@@ -138,6 +166,9 @@ function init() {
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.outputEncoding = THREE.sRGBEncoding;
+
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+	renderer.toneMappingExposure = 1;
   renderer.shadowMap.enabled = true;
   container.appendChild( renderer.domElement );
 
@@ -154,7 +185,7 @@ function init() {
 
   //stats gui
   stats = new Stats();
-  // container.appendChild( stats.dom );
+  // container.appendChild( stats.dom );\\
 
   window.addEventListener( 'resize', onWindowResize );
 }
@@ -315,7 +346,7 @@ function animate() {
   const mixerUpdateDelta = clock.getDelta();
 
   //rotate camera
-  const time = - performance.now() * 0.0000000001;
+  const time = - performance.now() * 0.00001;
   camera.position.x = 5 * Math.cos( time );
   camera.position.z = 11 * Math.sin( time );
   camera.position.y = 1.5;

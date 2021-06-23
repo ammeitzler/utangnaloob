@@ -9,6 +9,10 @@ Summer 2021, Chicago, IL
   - allow for all sites or just for https://utangngloob.netlify.app/
 - Launch site in browser with sound enabled
 
+## Harward
+- Mac MINI
+- xxx
+
 ## Repository Structure
 * `assets/` general images
   - `areas/grabs/` screenshots of figure
@@ -17,9 +21,11 @@ Summer 2021, Chicago, IL
 * `jsm/` threejs export functions
 * `models/` threejs pink figure
 * `scripts/`
-  - `scripts/achive` screenshots of figure directory pull
+  - `scripts/achive` screenshots of figure directory pull (not in use)
+  - `scripts/iframe` myoutube api (not in use)
   - `scripts/exchange` Open Exchange Rate API call
   - `scripts/dialoge` Creates chat from Remittance Youtube video comments
+  - `scripts/reloads` reloads website every 24 hours
 ## External API's and Libraries
 - Open Exchange Rate USD/PHP (https://openexchangerates.org/)
 - ThreeJS (https://github.com/mrdoob/three.js)

@@ -16,11 +16,11 @@ async function getExchange() {
   return data;
 }
 
- // SET FOR INSTALL (SET TO RATE TO CHECK EXCHANGE) //
+// SET FOR INSTALL (SET TO RATE TO CHECK EXCHANGE) // 30 MINUTES
 async function update() {
   const t1 = new Date();
   await getExchange();
-  setTimeout(update, 100000);
+  setTimeout(update, 1800000);
 }
 
 update();
