@@ -30,7 +30,7 @@ gui
 #screenshots {
 	position: absolute;
 	left: 2rem;
-	bottom: 2rem;
+	bottom: 5rem;
 	background: rgb(4 8 9 / 16%);
 	border-radius: 0.5em;
 	max-width: 55%;
@@ -164,7 +164,7 @@ gui
 #right_panel {
 	position: absolute;
 	right: 2rem;
-	bottom: 2rem;
+	bottom: 5rem;
 	display: flex;
 	flex-direction: column;
 	width: 15%;
@@ -244,7 +244,7 @@ gui
 	position: absolute;
 	border-radius: 0.5em;
 	width: 100%;
-	bottom: 33%;
+	bottom: 30%;
 }
 #wrapper {
 	overflow: scroll;
@@ -385,7 +385,10 @@ a, button, input, select {
 		#exchange {
 			background: rgb(4 8 9 / 5%);
 		}
-
+		#screenshots,
+		#right_panel {
+			bottom: 2rem;
+		}
 		#video {
 			background: rgb(4 8 9 / 12%);
 		}
