@@ -31,7 +31,7 @@ gui
 	position: absolute;
 	left: 2rem;
 	bottom: 2rem;
-	background: rgb(4 8 9 / 20%);
+	background: rgb(4 8 9 / 14%);
 	border-radius: 0.5em;
 	max-width: 55%;
 	min-width: 80%;
@@ -176,7 +176,7 @@ gui
   margin: 0 auto;
   font-family: sans-serif;
 	box-sizing: border-box;
-	background: rgb(4 8 9 / 20%);
+	background: rgb(4 8 9 / 14%);
 	border-radius: 0.5em;
 	width: 100%;
 	height: 100%;
@@ -247,7 +247,7 @@ gui
 }
 #wrapper {
 	overflow: scroll;
-	height: 37rem;
+	height: 44rem;
 	-webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   width: 97%;
@@ -379,7 +379,7 @@ a, button, input, select {
 	
 	} */
 
-	@media (max-width: 1200) {
+	@media (max-width: 2200px) {
 		#screenshots, 
 		#exchange {
 			background: rgb(4 8 9 / 5%);
@@ -387,6 +387,9 @@ a, button, input, select {
 
 		#video {
 			background: rgb(4 8 9 / 12%);
+		}
+		#wrapper {
+			height: 37rem;
 		}
 	}
 
