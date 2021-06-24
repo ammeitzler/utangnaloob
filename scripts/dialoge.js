@@ -53,7 +53,7 @@ $(document).ready(function(){
       //removes items from array
       let children = document.querySelectorAll(".box");
       children = Array.prototype.slice.call(children, 0);
-      if (children.length == 15) {
+      if (children.length == 20) {
         children.forEach(function(item,i) {
           if (i < 8) {
             item.remove();

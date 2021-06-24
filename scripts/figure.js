@@ -30,7 +30,7 @@ function updateFigure() {
   } else {
     scene.background = new THREE.Color( 0xf00f0f );
   }
-
+  
   // SET FOR INSTALL (SET TO RATE THAT CHECKS EXCHANGE RATE API) //
   setTimeout(updateFigure, 1800000);
 }
