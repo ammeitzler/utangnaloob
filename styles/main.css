@@ -387,13 +387,13 @@ a, button, input, select {
 		}
 		#screenshots,
 		#right_panel {
-			bottom: 5rem;
+			bottom: 7rem;
 		}
 		#video {
 			background: rgb(4 8 9 / 12%);
 		}
 		#wrapper {
-			height: 40rem;
+			height: 42rem;
 		}
 		#chat {
 			bottom: 36%;
