@@ -244,11 +244,11 @@ gui
 	position: absolute;
 	border-radius: 0.5em;
 	width: 100%;
-	bottom: 36%;
+	bottom: 35%;
 }
 #wrapper {
 	overflow: scroll;
-	height: 44rem;
+	height: 46rem;
 	-webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   width: 97%;
@@ -391,6 +391,9 @@ a, button, input, select {
 		}
 		#wrapper {
 			height: 37rem;
+		}
+		#chat {
+			bottom: 36%;
 		}
 	}
 
