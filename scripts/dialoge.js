@@ -84,7 +84,7 @@ $(document).ready(function(){
     getIndividualText(n);
     
     // SET FOR INSTALL (SET TO RATE) //
-    setTimeout(updateBoard, 4600);
+    // setTimeout(updateBoard, 4600);
     wrapper.scrollTop = wrapper.scrollHeight;
   }
 
