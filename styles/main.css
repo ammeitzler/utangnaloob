@@ -295,7 +295,6 @@ threejs
 	user-select: none;
 	pointer-events: none;
 	z-index: 1;
-	display: none;
 }
 a, button, input, select {
 	pointer-events: auto;
