@@ -34,6 +34,7 @@ gui
 	background: rgb(4 8 9 / 16%);
 	border-radius: 0.5em;
 	min-width: 42%;
+	max-width: 42%;
 	height: 19rem;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -402,4 +403,3 @@ a, button, input, select {
 		}
 	
 	}
-	
