@@ -346,7 +346,7 @@ a, button, input, select {
 		#screenshots,
 		#right_panel {
 			/* bottom: 2rem; */
-			bottom: 6.5;
+			bottom: 6.5rem;
 		}
 		#video {
 			background: rgb(4 8 9 / 12%);
